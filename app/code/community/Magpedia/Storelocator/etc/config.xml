@@ -19,7 +19,7 @@
 <config>
     <modules>
         <Magpedia_Storelocator>
-            <version>0.0.2</version>
+            <version>0.0.3</version>
         </Magpedia_Storelocator>
     </modules>
     <global>

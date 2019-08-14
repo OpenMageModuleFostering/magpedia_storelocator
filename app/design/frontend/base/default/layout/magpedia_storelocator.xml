@@ -18,7 +18,7 @@
 -->
 <layout>
     <default>
-        <reference name="head">  
+        <!--<reference name="head">  
             <action method="addCss"><stylesheet>storelocator/css/map.css</stylesheet></action>
             <action method="addItem" module="storelocator" ifconfig="storelocator/storelocator/enablejquery"><type>skin_js</type><name>storelocator/js/jquery-1.10.1.min.js</name><params/></action>
             <action method="addItem"><type>skin_js</type><name>storelocator/js/noConflict.js</name><params/></action>
@@ -30,7 +30,7 @@
                 </action>
             </block>
             <action method="addItem"><type>skin_js</type><name>storelocator/js/jquery.storelocator.js</name><params/></action>            
-        </reference>
+        </reference>-->
         <reference name="top.links">
             <action method="addLink" translate="label title" module="storelocator" ifconfig="storelocator/storelocator/active">
                 <label>Store Locator</label>

@@ -96,8 +96,13 @@ class Magpedia_Storelocator_StorelocatorController extends Mage_Core_Controller_
                 ->addStoreFilter(Mage::app()->getStore()->getId())
                 ->addFieldToFilter('status', 1);        
         foreach ($storeCol as $storeData) { 
-            //echo "<pre>";print_r($storeData->getData());die;            
-            $xml.='<marker name="' . $storeData['storetitle'] . '" lat="' . $storeData['latitude'] . '" lng="' . $storeData['longitude'] . '" address="' . $storeData['address']. '" country="' . Mage::app()->getLocale()->getCountryTranslation($storeData['country']). '" city="' . $storeData['city'] . '" state="' . $storeData['state']. '" postal="' . $storeData['postalcode'] . '" phone="' . $storeData['phone'] . '" fax="' . $storeData['fax'].'" web="' . $storeData['web'] . '" email="'.$storeData['email'].'" storeimage="'.$storeData['storeimage'].'" />';
+            //echo "<pre>";print_r($storeData->getData());die;       
+            $title = htmlspecialchars($storeData['storetitle'], ENT_QUOTES, 'UTF-8', false);
+            $address = htmlspecialchars($storeData['address'], ENT_QUOTES, 'UTF-8', false);
+            $city = htmlspecialchars($storeData['city'], ENT_QUOTES, 'UTF-8', false);
+            $state = htmlspecialchars($storeData['state'], ENT_QUOTES, 'UTF-8', false);
+            $email = htmlspecialchars($storeData['email'], ENT_QUOTES, 'UTF-8', false);
+            $xml.='<marker name="' . $title . '" lat="' . $storeData['latitude'] . '" lng="' . $storeData['longitude'] . '" address="' . $address . '" country="' . Mage::app()->getLocale()->getCountryTranslation($storeData['country']). '" city="' . $city . '" state="' . $state . '" postal="' . $storeData['postalcode'] . '" phone="' . $storeData['phone'] . '" fax="' . $storeData['fax'].'" web="' . $storeData['web'] . '" email="'.$email.'" storeimage="'.$storeData['storeimage'].'" />';
         }
         echo $xml.='</markers>';
     }
@@ -121,7 +126,12 @@ class Magpedia_Storelocator_StorelocatorController extends Mage_Core_Controller_
             $xml = '<?xml version="1.0"?>
 			<markers>';
             foreach ($searchCol as $storeData) {
-                $xml.='<marker name="' . $storeData['storetitle'] . '" lat="' . $storeData['latitude'] . '" lng="' . $storeData['longitude'] . '" address="' . $storeData['address']. '" country="' . Mage::app()->getLocale()->getCountryTranslation($storeData['country']). '" city="' . $storeData['city'] . '" state="' . $storeData['state']. '" postal="' . $storeData['postalcode'] . '" phone="' . $storeData['phone'] . '" fax="' . $storeData['fax'].'" web="' . $storeData['web'] . '" email="'.$storeData['email'].'" storeimage="'.$storeData['storeimage'].'" />';
+                $title = htmlspecialchars($storeData['storetitle'], ENT_QUOTES, 'UTF-8', false);
+                $address = htmlspecialchars($storeData['address'], ENT_QUOTES, 'UTF-8', false);
+                $city = htmlspecialchars($storeData['city'], ENT_QUOTES, 'UTF-8', false);
+                $state = htmlspecialchars($storeData['state'], ENT_QUOTES, 'UTF-8', false);
+                $email = htmlspecialchars($storeData['email'], ENT_QUOTES, 'UTF-8', false);
+                $xml.='<marker name="' . $title . '" lat="' . $storeData['latitude'] . '" lng="' . $storeData['longitude'] . '" address="' . $address . '" country="' . Mage::app()->getLocale()->getCountryTranslation($storeData['country']). '" city="' . $city . '" state="' . $state . '" postal="' . $storeData['postalcode'] . '" phone="' . $storeData['phone'] . '" fax="' . $storeData['fax'].'" web="' . $storeData['web'] . '" email="'.$email.'" storeimage="'.$storeData['storeimage'].'" />';
             }
             echo $xml.='</markers>';
         } else {
