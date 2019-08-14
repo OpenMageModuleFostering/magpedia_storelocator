@@ -19,27 +19,17 @@
 <layout>
     <default>
         <reference name="head">  
-            <action method="addCss">
-                <stylesheet>storelocator/css/map.css</stylesheet>
-            </action>
-            <action method="addJs">
-                <script>storelocator/jquery-1.10.1.min.js</script>
-            </action>
-            <action method="addJs">
-                <script>storelocator/noConflict.js</script>
-            </action>	
-            <action method="addJs">
-                <script>storelocator/handlebars-1.0.0.min.js</script>
-            </action>
+            <action method="addCss"><stylesheet>storelocator/css/map.css</stylesheet></action>
+            <action method="addItem" module="storelocator" ifconfig="storelocator/storelocator/enablejquery"><type>skin_js</type><name>storelocator/js/jquery-1.10.1.min.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>storelocator/js/noConflict.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>storelocator/js/handlebars-1.0.0.min.js</name><params/></action>            
             <block type="core/text" name="google.cdn.jquery"> 
                 <action method="setText">
                     <text><![CDATA[<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><script type="text/javascript">jQuery.noConflict();</script>]]>
                     </text>
                 </action>
             </block>
-            <action method="addJs">
-                <script>storelocator/jquery.storelocator.js</script>
-            </action>
+            <action method="addItem"><type>skin_js</type><name>storelocator/js/jquery.storelocator.js</name><params/></action>            
         </reference>
         <reference name="top.links">
             <action method="addLink" translate="label title" module="storelocator" ifconfig="storelocator/storelocator/active">
