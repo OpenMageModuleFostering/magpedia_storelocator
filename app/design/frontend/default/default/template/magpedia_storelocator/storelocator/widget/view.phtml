@@ -1,0 +1,41 @@
+<?php
+/**
+ * Magpedia_Storelocator extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Magpedia
+ * @package	Magpedia_Storelocator
+ * @copyright  	Copyright (c) 2014
+ * @license	http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Store view widget template
+ *
+ * @category	Magpedia
+ * @package		Magpedia_Storelocator
+ * @author Ultimate Module Creator
+ */
+?>
+<?php $_storelocator = $this->getCurrentStorelocator();?>
+<?php if ($_storelocator) :?>
+	<div class="storelocator-widget-view">
+		<h3><?php echo $_storelocator->getStoretitle()?></h3>
+		<div>
+			<?php echo Mage::helper('storelocator')->__('Store Title');?>:<?php echo $_storelocator->getStoretitle();?>
+			<?php echo Mage::helper('storelocator')->__('Store Link');?>:<?php echo $_storelocator->getStorelink();?>
+			<?php echo Mage::helper('storelocator')->__('City');?>:<?php echo $_storelocator->getCity();?>
+			<?php echo Mage::helper('storelocator')->__('Postal Code');?>:<?php echo $_storelocator->getPostalcode();?>
+			<?php echo Mage::helper('storelocator')->__('Description');?>:<?php echo $_storelocator->getDescription();?>
+			<?php if ($_storelocator->getStoreimage()) :?>
+		<img src="<?php echo Mage::helper('storelocator/storelocator_image')->init($_storelocator, 'storeimage')->resize(75);?>" alt="<?php echo $this->htmlEscape($_storelocator->getStoretitle());?>" />
+		<?php endif;?>
+
+		</div>
+	</div>
+<?php endif;?> 

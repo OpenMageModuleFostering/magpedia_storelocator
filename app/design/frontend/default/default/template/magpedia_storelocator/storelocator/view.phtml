@@ -1,0 +1,76 @@
+<?php 
+/**
+ * Magpedia_Storelocator extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Magpedia
+ * @package	Magpedia_Storelocator
+ * @copyright  	Copyright (c) 2014
+ * @license http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Store view template
+ *
+ * @category	Magpedia
+ * @package		Magpedia_Storelocator
+ * @author Ultimate Module Creator
+ */
+?>
+<?php $_storelocator = $this->getCurrentStorelocator();?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title storelocator-title">
+	<h1><?php echo $_storelocator->getStoretitle(); ?></h1>
+</div>
+<div class="storelocator-view">
+	<div class="storelocator-storetitle">
+		<?php echo Mage::helper('storelocator')->__('Store Title');?>:<?php echo $_storelocator->getStoretitle();?>
+	</div>
+	<div class="storelocator-storelink">
+		<?php echo Mage::helper('storelocator')->__('Store Link');?>:<?php echo $_storelocator->getStorelink();?>
+	</div>
+	<div class="storelocator-country">
+		<?php echo Mage::helper('storelocator')->__("Country");?>:<?php echo ($_storelocator->getCountry()) ? Mage::getModel('directory/country')->load($_storelocator->getCountry())->getName():Mage::helper('storelocator')->__('None') ?>
+	</div>
+	<div class="storelocator-state">
+		<?php echo Mage::helper('storelocator')->__('State');?>:<?php echo $_storelocator->getState();?>
+	</div>
+	<div class="storelocator-city">
+		<?php echo Mage::helper('storelocator')->__('City');?>:<?php echo $_storelocator->getCity();?>
+	</div>
+	<div class="storelocator-postalcode">
+		<?php echo Mage::helper('storelocator')->__('Postal Code');?>:<?php echo $_storelocator->getPostalcode();?>
+	</div>
+	<div class="storelocator-address">
+		<?php echo Mage::helper('storelocator')->__('Address');?>:<?php echo $_storelocator->getAddress();?>
+	</div>
+	<div class="storelocator-latitude">
+		<?php echo Mage::helper('storelocator')->__('Latitude');?>:<?php echo $_storelocator->getLatitude();?>
+	</div>
+	<div class="storelocator-longitude">
+		<?php echo Mage::helper('storelocator')->__('Longitude');?>:<?php echo $_storelocator->getLongitude();?>
+	</div>
+	<div class="storelocator-phone">
+		<?php echo Mage::helper('storelocator')->__('Phone');?>:<?php echo $_storelocator->getPhone();?>
+	</div>
+	<div class="storelocator-fax">
+		<?php echo Mage::helper('storelocator')->__('Fax');?>:<?php echo $_storelocator->getFax();?>
+	</div>
+	<div class="storelocator-description">
+		<?php echo Mage::helper('storelocator')->__('Description');?>:<?php echo $_storelocator->getDescription();?>
+	</div>
+	<div class="storelocator-storeimage">
+		<?php if ($_storelocator->getStoreimage()) :?>
+		<img src="<?php echo Mage::helper('storelocator/storelocator_image')->init($_storelocator, 'storeimage')->resize(75);?>" alt="<?php echo $this->htmlEscape($_storelocator->getStoretitle());?>" />
+		<?php endif;?>
+	</div>
+	<div class="storelocator-sortorder">
+		<?php echo Mage::helper('storelocator')->__('Sort Order');?>:<?php echo $_storelocator->getSortorder();?>
+	</div>
+
+</div>

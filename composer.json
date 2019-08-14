@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Magpedia_Storelocator",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "Magpedia store locator guides users to find out physical locations of retailers such as branches, stores and offices. The store locator also provides important information about each location  including its address, phone numbers, hours of operation, store description, country, state city and sometimes directions of the location. Users smoothly search their nearest store by entering their postal code/state/city/store title and the store locator returns all the information of the stores according to the given data.",
+    "authors": [
+    {
+        "name": "Ramesh Kumar",
+        "email": "rkrameshraja@gmail.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

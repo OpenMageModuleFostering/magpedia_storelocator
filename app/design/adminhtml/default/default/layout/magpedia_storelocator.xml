@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magpedia_Storelocator extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Magpedia
+ * @package	Magpedia_Storelocator
+ * @copyright  	Copyright (c) 2014
+ * @license http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+	<!-- Manage Storelocator grid action -->
+	<adminhtml_storelocator_storelocator_index>
+		<reference name="menu">
+			<action method="setActive">
+				<menupath>storelocator/storelocator</menupath>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="storelocator/adminhtml_storelocator" name="storelocator" />
+		</reference>
+	</adminhtml_storelocator_storelocator_index>
+	<adminhtml_storelocator_storelocator_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="storelocator/adminhtml_storelocator_grid" name="storelocator_grid"/>
+		</block>
+	</adminhtml_storelocator_storelocator_grid>
+	<!-- Storelocator add/edit action -->
+	<adminhtml_storelocator_storelocator_edit>
+		<update handle="editor"/>
+		<reference name="menu">
+			<action method="setActive">
+				<menupath>storelocator/storelocator</menupath>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="storelocator/adminhtml_storelocator_edit" name="storelocator_edit"></block>
+		</reference>
+		<reference name="left">
+			<block type="storelocator/adminhtml_storelocator_edit_tabs" name="storelocator_tabs"></block>
+		</reference> 
+	</adminhtml_storelocator_storelocator_edit>
+</layout>

@@ -1,0 +1,30 @@
+<?php
+/**
+ * Magpedia_Storelocator extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Magpedia
+ * @package	Magpedia_Storelocator
+ * @copyright  	Copyright (c) 2014
+ * @license	http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Store link widget template
+ *
+ * @category	Magpedia
+ * @package		Magpedia_Storelocator
+ * @author Ultimate Module Creator
+ */
+?>
+<?php $_storelocator = $this->getCurrentStorelocator();?>
+<?php if ($_storelocator) :?>
+	<div class="storelocator-widget-link">
+		<a href="<?php echo $_storelocator->getStorelocatorUrl()?>"><?php echo $_storelocator->getStoretitle()?></a>
+	</div>
+<?php endif;?> 

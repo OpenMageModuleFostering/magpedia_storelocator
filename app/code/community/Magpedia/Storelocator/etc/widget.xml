@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magpedia_Storelocator extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Magpedia
+ * @package	Magpedia_Storelocator
+ * @copyright  	Copyright (c) 2014
+ * @license	http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<widgets>
+	<storelocator_storelocator_view type="storelocator/storelocator_widget_view" translate="name description" module="storelocator">
+		<name>Store view</name>
+		<description>Store view widget</description>
+		<is_email_compatible>0</is_email_compatible>
+		<parameters>
+			<storelocator_id type="complex" translate="label">
+				<visible>1</visible>
+				<required>1</required>
+				<label>Store</label>
+				<type>label</type>
+				<helper_block>
+					<type>storelocator/adminhtml_storelocator_widget_chooser</type>
+					<data>
+						<button translate="open">
+							<open>Select Store</open>
+						</button>
+					</data>
+				</helper_block>
+				<sort_order>120</sort_order>
+			</storelocator_id>
+		</parameters>
+	</storelocator_storelocator_view>
+	<storelocator_storelocator_link type="storelocator/storelocator_widget_link" translate="name description" module="storelocator">
+		<name>Store link</name>
+		<description>Store link widget</description>
+		<is_email_compatible>0</is_email_compatible>
+		<parameters>
+			<storelocator_id type="complex" translate="label">
+				<visible>1</visible>
+				<required>1</required>
+				<label>Store</label>
+				<type>label</type>
+				<helper_block>
+					<type>storelocator/adminhtml_storelocator_widget_chooser</type>
+					<data>
+						<button translate="open">
+							<open>Select Store</open>
+						</button>
+					</data>
+				</helper_block>
+				<sort_order>130</sort_order>
+			</storelocator_id>
+		</parameters>
+	</storelocator_storelocator_link>
+</widgets>

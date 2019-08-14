@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magpedia_Storelocator extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Magpedia
+ * @package	Magpedia_Storelocator
+ * @copyright  	Copyright (c) 2014
+ * @license http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Magpedia_Storelocator>
+            <version>0.0.1</version>
+        </Magpedia_Storelocator>
+    </modules>
+    <global>
+        <resources>
+            <magpedia_storelocator_setup>
+                <setup>
+                    <module>Magpedia_Storelocator</module>
+                    <class>Magpedia_Storelocator_Model_Resource_Setup</class>
+                </setup>
+            </magpedia_storelocator_setup>
+        </resources>
+        <blocks>
+            <storelocator>
+                <class>Magpedia_Storelocator_Block</class>
+            </storelocator>
+        </blocks>
+        <helpers>
+            <storelocator>
+                <class>Magpedia_Storelocator_Helper</class>
+            </storelocator>
+        </helpers>
+        <models>
+            <storelocator>
+                <class>Magpedia_Storelocator_Model</class>
+                <resourceModel>storelocator_resource</resourceModel>
+            </storelocator>
+            <storelocator_resource>
+                <class>Magpedia_Storelocator_Model_Resource</class>
+                <entities>
+                    <storelocator>
+                        <table>storelocator_storelocator</table>
+                    </storelocator>
+                    <storelocator_store>
+                        <table>storelocator_storelocator_store</table>
+                    </storelocator_store>
+                </entities>
+            </storelocator_resource>
+        </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <magpedia_storelocator>
+                        <class>Magpedia_Storelocator_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </magpedia_storelocator>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <magpedia_storelocator>
+                    <file>magpedia_storelocator.xml</file>
+                </magpedia_storelocator>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Magpedia_Storelocator>
+                    <files>
+                        <default>Magpedia_Storelocator.csv</default>
+                    </files>
+                </Magpedia_Storelocator>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Magpedia_Storelocator before="Mage_Adminhtml">Magpedia_Storelocator_Adminhtml</Magpedia_Storelocator>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <storelocator>
+                <use>standard</use>
+                <args>
+                    <module>Magpedia_Storelocator</module>
+                    <frontName>storelocator</frontName>
+                </args>
+            </storelocator>
+        </routers>
+        <layout>
+            <updates>
+                <magpedia_storelocator>
+                    <file>magpedia_storelocator.xml</file>
+                </magpedia_storelocator>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Magpedia_Storelocator>
+                    <files>
+                        <default>Magpedia_Storelocator.csv</default>
+                    </files>
+                </Magpedia_Storelocator>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <storelocator>
+            <storelocator>
+                <active>1</active>
+                <breadcrumbs>1</breadcrumbs>
+                <defaultlon>77.35756620000006</defaultlon>
+                <defaultlat>28.5785766</defaultlat>
+            </storelocator>
+        </storelocator>
+    </default>
+</config>
