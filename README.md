@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 Magpedia store locator guides users to find out physical locations of retailers such as branches, stores and offices.

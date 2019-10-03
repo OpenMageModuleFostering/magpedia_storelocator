@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Magpedia_Storelocator",
+    "name": "openmage-module-fostering\/magpedia_storelocator",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Magpedia store locator guides users to find out physical locations of retailers such as branches, stores and offices.",
     "authors": [
